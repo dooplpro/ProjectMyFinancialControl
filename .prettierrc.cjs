@@ -1,11 +1,11 @@
 module.exports = {
   trailingComma: "all",
   tabWidth: 2,
-  semi: true,
+  semi: false,
   singleQuote: true,
   printWidth: 90,
   bracketSpacing: true,
-  importOrder: ["^[react]", "^[@]", "^~/(.*)$", "^[./]"],
+  importOrder: ["^~/(.*)$", "^[./]"],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true
 };
