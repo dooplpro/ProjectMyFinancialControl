@@ -1,0 +1,5 @@
+const {{name}} = () => {
+  return <>{{name}}</>
+}
+
+export default {{name}}
