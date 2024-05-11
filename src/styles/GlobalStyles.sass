@@ -1,4 +1,13 @@
-@import "./Variables"
- 
-body 
+@use "Fonts"
+@import "Variables"
+
+html, body
+  padding: 0
+  margin: 0
+
+body
+  @extend .roboto-regular
   background-color: $background-page-color
+  height: 100dvh
+  width: 100dvw
+  overflow-x: hidden
