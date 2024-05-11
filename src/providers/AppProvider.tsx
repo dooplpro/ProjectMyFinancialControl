@@ -1,7 +1,13 @@
 import RouterProvider from './RouterProvider'
+import StylesProvider from './StylesProvider'
 
 const AppProvider = () => {
-  return <RouterProvider />
+  return (
+    <>
+      <StylesProvider />
+      <RouterProvider />
+    </>
+  )
 }
 
 export default AppProvider

@@ -5,5 +5,8 @@
   "editor.formatOnPaste": true,
   "[shellscript]": {
     "editor.defaultFormatter": "shakram02.bash-beautify"
+  },
+  "[sass]": {
+    "editor.defaultFormatter": "syler.sass-indented"
   }
 }
