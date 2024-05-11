@@ -2,5 +2,8 @@
   "prettier.configPath": ".prettierrc.cjs",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "editor.formatOnPaste": true
+  "editor.formatOnPaste": true,
+  "[shellscript]": {
+    "editor.defaultFormatter": "shakram02.bash-beautify"
+  }
 }
