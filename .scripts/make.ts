@@ -1,5 +1,6 @@
 import { mkdirSync, writeFileSync, existsSync, readFileSync } from 'node:fs'
 import path from 'path'
+import { readyFileToString } from './helpers'
 
 function component(names: string[]) {
   if (names.length === 0) {
@@ -7,15 +8,15 @@ function component(names: string[]) {
     return
   }
 
-  const componentFileReader = readFileSync(
+  const componentFileReader = readyFileToString(
     path.resolve(__dirname, './templates/component/component.tamplate'),
-  ).toString()
-  const indexFileReader = readFileSync(
+  )
+  const indexFileReader = readyFileToString(
     path.resolve(__dirname, './templates/component/index.template'),
-  ).toString()
-  const specFileReader = readFileSync(
+  )
+  const specFileReader = readyFileToString(
     path.resolve(__dirname, './templates/component/component.spec.template'),
-  ).toString()
+  )
 
   names.forEach((name) => {
     const splitDir = name.split('/')
