@@ -1,12 +1,11 @@
+import BootstrapProvider from './BootstrapProvider'
 import RouterProvider from './RouterProvider'
-import StylesProvider from './StylesProvider'
 
 const AppProvider = () => {
   return (
-    <>
-      <StylesProvider />
+    <BootstrapProvider>
       <RouterProvider />
-    </>
+    </BootstrapProvider>
   )
 }
 
