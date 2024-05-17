@@ -17,6 +17,9 @@ function component(names: string[]) {
   const specFileReader = readyFileToString(
     path.resolve(__dirname, './templates/component/component.spec.template'),
   )
+  const typesFileReader = readyFileToString(
+    path.resolve(__dirname, './templates/component/types.template'),
+  )
 
   names.forEach((name) => {
     const splitDir = name.split('/')
@@ -39,15 +42,18 @@ function component(names: string[]) {
     const componentTemplate = componentFileReader.replace(/{{name}}/g, componentName)
     const indexTemplate = indexFileReader.replace(/{{fileName}}/g, componentName)
     const specTemplate = specFileReader.replace(/{{componentName}}/g, componentName)
+    const typesTemplate = typesFileReader.replace(/{{componentName}}/g, componentName)
 
     const finalPathComponent = `${pathComponent}/${componentName}.tsx`
     const finalPathIndex = `${pathComponent}/index.ts`
     const finalPathSpec = `${pathComponent}/${componentName}.spec.tsx`
+    const finalPathtypes = `${pathComponent}/${componentName}Types.ts`
 
     mkdirSync(pathComponent, { recursive: true })
     writeFileSync(finalPathComponent, componentTemplate)
     writeFileSync(finalPathIndex, indexTemplate)
     writeFileSync(finalPathSpec, specTemplate)
+    writeFileSync(finalPathtypes, typesTemplate)
 
     if (/(Component|Layout)/g.test(componentName)) {
       writeFileSync(`${pathComponent}/${pathName}Styles.module.sass`, '')
