@@ -4,8 +4,7 @@ import StylesProvider from './StylesProvider'
 const BootstrapProvider = ({ children }: PropsWithChildren) => {
   return (
     <>
-      <StylesProvider />
-      {children}
+      <StylesProvider>{children}</StylesProvider>
     </>
   )
 }
